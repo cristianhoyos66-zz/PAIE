@@ -5,4 +5,7 @@
 
 <!ELEMENT colegio (asignatura)*>
 <!ELEMENT asignatura (#PCDATA)> 
+
 <!ATTLIST colegio nombre CDATA #REQUIRED>
+<!ATTLIST asignatura codigo CDATA #IMPLIED
+                     nombre CDATA #REQUIRED>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE colegio SYSTEM "Colegio.dtd">
 <colegio nombre="Teresiano">
-    <asignatura codigo="1010">
-        
+    <asignatura codigo="5454" nombre="Matematicas">        
     </asignatura>
 </colegio>
 
