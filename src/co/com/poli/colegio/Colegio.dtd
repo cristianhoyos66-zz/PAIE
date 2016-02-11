@@ -1,0 +1,7 @@
+<!--ELEMENT colegio (asignatura)> asignatura puede aparecer una vez y es obligatoria--> 
+<!--ELEMENT colegio (asignatura?)> asignatura puede aparece cero o una vez vez--> 
+<!--ELEMENT colegio (asignatura*)> asignatura puede aparece cero o muhas veces -->
+<!--ELEMENT colegio (asignatura+)> asignatura puede aparece una o muhas veces -->
+
+<!ELEMENT colegio (#PCDATA | asignatura)*>
+<!ELEMENT asignatura (#PCDATA)> 
