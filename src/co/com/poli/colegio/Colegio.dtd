@@ -8,4 +8,5 @@
 
 <!ATTLIST colegio nombre CDATA #REQUIRED>
 <!ATTLIST asignatura codigo CDATA #IMPLIED
-                     nombre CDATA #REQUIRED>
+                     nombre CDATA #REQUIRED
+                     grupo (2A|2B) #REQUIRED>
