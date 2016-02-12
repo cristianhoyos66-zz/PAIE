@@ -1,0 +1,27 @@
+<!ELEMENT aerolinea (viaje)+>
+<!ELEMENT viaje (datosvuelo, datosavion)> 
+<!ELEMENT datosvuelo (escalas, tiempoduracion)*> 
+<!ELEMENT escalas (#PCDATA)*>
+<!ELEMENT tiempoduracion (#PCDATA)>
+<!ELEMENT datosavion (#PCDATA)>
+
+<!ATTLIST viaje nombreempresa CDATA #REQUIRED
+                feha CDATA #REQUIRED>
+
+<!ATTLIST datosvuelo    nombretrayecto CDATA #REQUIRED
+                        origen CDATA #REQUIRED
+                        destino CDATA #REQUIRED>
+
+<!ATTLIST escalas   ciudad CDATA #REQUIRED
+                    hora CDATA #REQUIRED
+                    id ID #REQUIRED>
+                  
+<!ATTLIST tiempoduracion    horasalida CDATA #REQUIRED
+                            horallegada CDATA #REQUIRED
+                            tiempototal CDATA #REQUIRED>
+
+<!ATTLIST datosavion    referenciaavion CDATA #REQUIRED
+                        nombrecapitan CDATA #REQUIRED
+                        pasajeros CDATA #REQUIRED
+                        observaciones CDATA #REQUIRED>
+
