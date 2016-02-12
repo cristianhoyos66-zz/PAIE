@@ -4,9 +4,16 @@
 <!--ELEMENT colegio (asignatura+)> asignatura puede aparece una o muhas veces -->
 
 <!ELEMENT colegio (asignatura)*>
-<!ELEMENT asignatura (#PCDATA)> 
+<!ELEMENT asignatura (estudiante+)> 
+<!ELEMENT estudiante (nombre, apellido, celular?, telefono?, email?)> 
+<!ELEMENT nombre (#PCDATA)> 
+<!ELEMENT apellido (#PCDATA)> 
+<!ELEMENT celular (#PCDATA)> 
+<!ELEMENT telefono (#PCDATA)> 
+<!ELEMENT email (#PCDATA)> 
 
 <!ATTLIST colegio nombre CDATA #REQUIRED>
 <!ATTLIST asignatura codigo CDATA #IMPLIED
                      nombre CDATA #REQUIRED
                      grupo (2A|2B) #REQUIRED>
+<!ATTLIST estudiante id ID #REQUIRED>

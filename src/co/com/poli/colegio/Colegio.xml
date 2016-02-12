@@ -2,7 +2,30 @@
 <!DOCTYPE colegio SYSTEM "Colegio.dtd">
 <colegio nombre="Teresiano">
     <asignatura grupo="2A" codigo="5454" nombre="Matematicas">        
-        
+        <estudiante id="L1">
+            <nombre>               
+            </nombre>
+            <apellido>                
+            </apellido>
+        </estudiante>
+        <estudiante id="L2">
+            <nombre>               
+            </nombre>
+            <apellido>                
+            </apellido>
+            <celular>                
+            </celular>
+        </estudiante>
+        <estudiante id="L3">
+            <nombre>               
+            </nombre>
+            <apellido>                
+            </apellido>
+            <telefono>                
+            </telefono>
+            <email>                
+            </email>
+        </estudiante>
     </asignatura>
 </colegio>
 
