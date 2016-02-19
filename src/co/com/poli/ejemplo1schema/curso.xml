@@ -10,7 +10,7 @@
     </profesor>
     <estudiantes>
         <estudiante 
-            codigo="10" 
+            codigo="AAA-22" 
             sexo="F">
             <nombre>
                 Jorge
@@ -24,7 +24,7 @@
         </estudiante>
         <estudiante 
             sexo="F" 
-            codigo="A80">
+            codigo="EEE-53">
             <nombre>
                 Mascha
             </nombre>
