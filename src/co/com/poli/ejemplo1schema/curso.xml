@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cursos 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+          xs:noNamespaceSchemaLocation="curso.xsd">
+    <modulo codigo="255-A">
+        Java
+    </modulo>
+    <profesor>
+        Jose
+    </profesor>
+    <estudiantes>
+        <estudiante 
+            codigo="10" 
+            sexo="F">
+            <nombre>
+                Jorge
+            </nombre>
+        </estudiante>
+        <estudiante
+            sexo="F">
+            <nombre>
+                Anastacha
+            </nombre>
+        </estudiante>
+        <estudiante 
+            sexo="F" 
+            codigo="A80">
+            <nombre>
+                Mascha
+            </nombre>
+        </estudiante>
+    </estudiantes>
+    <cantidadAlumnos>
+        56
+    </cantidadAlumnos>
+</cursos>

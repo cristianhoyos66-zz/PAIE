@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<xs:schema 
+    version="1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">    
+    <xs:element 
+        name="cursos">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element 
+                    name="modulo">
+                    <xs:complexType mixed="true">
+                        <xs:attribute 
+                            name="codigo"
+                            type="xs:string"
+                            use="required">
+                            
+                        </xs:attribute>
+                    </xs:complexType>                    
+                </xs:element>
+                <xs:element 
+                    name="profesor"
+                    type="xs:string">
+                    
+                </xs:element>
+                <xs:element 
+                    name="estudiantes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element 
+                                name="estudiante"
+                                minOccurs="0"
+                                maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element 
+                                            name="nombre" 
+                                            type="xs:string">                                            
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute 
+                                        name="codigo" 
+                                        type="xs:string"
+                                        use="optional">
+                                        
+                                    </xs:attribute>
+                                    <xs:attribute 
+                                        name="sexo" 
+                                        type="tipoSexo"
+                                        use="required">                                        
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element 
+                    name="cantidadAlumnos" 
+                    type="xs:double">                    
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>        
+    </xs:element>
+    
+    <xs:simpleType name="tipoSexo">
+        <xs:restriction
+            base="xs:string">
+            <xs:enumeration value="M">
+            </xs:enumeration>
+            <xs:enumeration value="F">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>
