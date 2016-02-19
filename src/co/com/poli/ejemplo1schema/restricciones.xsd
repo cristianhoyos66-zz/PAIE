@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType 
+        name="tipoSexo">
+        <xs:restriction
+            base="xs:string">
+            <xs:enumeration 
+                value="M">
+            </xs:enumeration>
+            <xs:enumeration 
+                value="F">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType
+        name="TipoCodigoEstudiante">
+        <xs:restriction
+            base="xs:integer">
+            <xs:totalDigits 
+                value="10">
+                
+            </xs:totalDigits>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType
+        name="TipoCodigoEstudiante2">
+        <xs:restriction
+            base="xs:string">
+            <xs:pattern 
+                value="[A-Z]{3}[-]{1}[0-9]{2}">
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:group name="datosBasicos">
+        <xs:sequence>
+            
+        </xs:sequence>
+    </xs:group>
+
+</xs:schema>

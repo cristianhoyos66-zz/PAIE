@@ -2,7 +2,8 @@
 <cursos 
     xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
           xs:noNamespaceSchemaLocation="curso.xsd">
-    <modulo codigo="255--A">
+    <modulo 
+        codigo="255--A">
         Java
     </modulo>
     <profesor>
