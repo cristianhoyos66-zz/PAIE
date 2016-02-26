@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="estilo.xsl" type="text/xsl"?>
+
+<tienda>
+    <nombre>
+        Tecnologías 2015
+    </nombre>
+    <ciudad>
+        Medellín
+    </ciudad>
+    <poductos>
+        <producto 
+            codigo="10">
+            <nombre>
+                Monitor
+            </nombre>
+            <cantidad>
+                10
+            </cantidad>
+            <valor>
+                1000000
+            </valor>
+        </producto>
+        <producto 
+            codigo="11">
+            <nombre>
+                CPU
+            </nombre>
+            <cantidad>
+                5
+            </cantidad>
+            <valor>
+                1000000
+            </valor>
+        </producto>
+        <producto 
+            codigo="10">
+            <nombre>
+                Impresora
+            </nombre>
+            <cantidad>
+                10
+            </cantidad>
+            <valor>
+                1000000
+            </valor>
+        </producto>
+    </poductos>
+</tienda>
