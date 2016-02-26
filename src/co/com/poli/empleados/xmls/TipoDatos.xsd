@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <!-- grupo de datos para un empleado estándar -->
+    <xs:group 
+        name="TipoEmpleado">
+        <xs:sequence>
+            <xs:element 
+                name="nombre"
+                type="xs:string"/>
+            <xs:element 
+                name="apellido" 
+                type="xs:string"/>
+            <xs:element 
+                name="telefono"
+                type="xs:double" 
+                minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <!-- grupo de atributos para un empleado estándar -->
+    <xs:attributeGroup
+        name="attrTipoEmpleados">
+        <xs:attribute 
+            name="codigo"
+            type="TipoCodigoEmpleado" 
+            use="required"/>
+        <xs:attribute 
+            name="fechaIngreso" 
+            type="TipoFechaEmpleado"
+            use="required"/>
+    </xs:attributeGroup>
+    
+    <!-- regla para el codigo del empleado
+         Rango entre 10000 - 99000 -->
+    <xs:simpleType 
+        name="TipoCodigoEmpleado">
+        <xs:restriction 
+            base="xs:double">
+            <xs:minInclusive 
+                value="10000"/>
+            <xs:maxInclusive 
+                value="99000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Regla para la feha del empleado
+         debe ser mayor igual que 2015-01-01-->
+    <xs:simpleType 
+        name="TipoFechaEmpleado">
+        <xs:restriction 
+            base="xs:date">
+            <xs:minInclusive 
+                value="2015-01-01"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

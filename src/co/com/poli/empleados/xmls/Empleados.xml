@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listado
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="Empleados.xsd">
+    <empleados>
+        <asalariado
+            codigo="10000"
+            fechaIngreso="2015-12-25">
+            <nombre>
+                Mascha
+            </nombre>
+            <apellido>
+                Petrova
+            </apellido>
+            <telefono>
+                545454
+            </telefono>
+            <salario>
+                554545
+            </salario>
+        </asalariado>
+        <comisionado
+            codigo="99000"
+            fechaIngreso="2015-12-25">
+            <nombre>
+                Mascha
+            </nombre>
+            <apellido>
+                Petrova
+            </apellido>
+            <telefono>
+                545454
+            </telefono>
+            <ventas>
+                20.4
+            </ventas>
+            <porComision>
+                45.6
+            </porComision>
+        </comisionado>
+    </empleados>
+</listado>
+
