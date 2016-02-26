@@ -3,6 +3,83 @@
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
+    
+    <!-- Crear un objeto de tipo empleado (complejo) -->
+    <xs:complexType 
+        name="TipoEmpleadoBase">
+        <xs:sequence>
+            <xs:element 
+                name="nombre"
+                type="xs:string"/>
+            <xs:element 
+                name="apellido" 
+                type="xs:string"/>
+            <xs:element 
+                name="telefono"
+                type="xs:double" 
+                minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute 
+            name="codigo"
+            type="TipoCodigoEmpleado" 
+            use="required"/>
+        <xs:attribute 
+            name="fechaIngreso" 
+            type="TipoFechaEmpleado"
+            use="required"/>
+    </xs:complexType>
+    
+    <!-- crear tipo de empleadoasalariado -->
+    <xs:complexType 
+        name="TipoEmpleadoAsalariado">
+        <xs:complexContent>
+            <xs:extension 
+                base="TipoEmpleadoBase">
+                <xs:sequence>
+                    <xs:element 
+                        name="salario" 
+                        type="xs:double"/> 
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- crear tipo de empleadoas comisionado -->
+    <xs:complexType 
+        name="TipoEmpleadoComisionado">
+        <xs:complexContent>
+            <xs:extension 
+                base="TipoEmpleadoBase">
+                <xs:sequence>
+                    <xs:element 
+                        name="ventas" 
+                        type="xs:double"/> 
+                    <xs:element 
+                        name="porComision" 
+                        type="xs:double"/> 
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- crear tipo de empleado por horas -->
+    <xs:complexType 
+        name="TipoEmpleadoPorHoras">
+        <xs:complexContent>
+            <xs:extension 
+                base="TipoEmpleadoBase">
+                <xs:sequence>
+                    <xs:element 
+                        name="numhoras" 
+                        type="xs:integer"/> 
+                    <xs:element 
+                        name="valorhoras" 
+                        type="xs:double"/> 
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
 
     <!-- grupo de datos para un empleado estándar -->
     <xs:group 
@@ -35,7 +112,7 @@
     </xs:attributeGroup>
     
     <!-- regla para el codigo del empleado
-         Rango entre 10000 - 99000 -->
+    Rango entre 10000 - 99000 -->
     <xs:simpleType 
         name="TipoCodigoEmpleado">
         <xs:restriction 

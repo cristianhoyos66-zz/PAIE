@@ -39,6 +39,22 @@
                 45.6
             </porComision>
         </comisionado>
+        <porHoras 
+            codigo="80000" 
+            fechaIngreso="2015-05-05">
+            <nombre>
+                Mascha
+            </nombre>
+            <apellido>
+                Petrova
+            </apellido>
+            <numhoras>
+                50
+            </numhoras>
+            <valorhoras>
+                40
+            </valorhoras>
+        </porHoras>
     </empleados>
 </listado>
 

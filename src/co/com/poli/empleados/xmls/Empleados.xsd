@@ -15,6 +15,20 @@
                     name="empleados">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element
+                                name="asalariado"
+                                type="TipoEmpleadoAsalariado">
+                            </xs:element>
+                             <xs:element
+                                name="comisionado"
+                                type="TipoEmpleadoComisionado">
+                            </xs:element>
+                             <xs:element
+                                name="porHoras"
+                                type="TipoEmpleadoPorHoras">
+                            </xs:element>
+                        </xs:sequence>
+                        <!--xs:sequence>
                             <xs:element 
                                 name="asalariado">
                                 <xs:complexType>
@@ -46,7 +60,24 @@
                                         ref="attrTipoEmpleados"/>
                                 </xs:complexType>
                             </xs:element>
-                        </xs:sequence>
+                            <xs:element 
+                                name="porHoras">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:group 
+                                            ref="TipoEmpleado"/>
+                                        <xs:element 
+                                            name="numhoras" 
+                                            type="xs:integer"/> 
+                                        <xs:element 
+                                            name="valorhoras" 
+                                            type="xs:double"/> 
+                                    </xs:sequence>
+                                   <xs:attributeGroup 
+                                        ref="attrTipoEmpleados"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence-->
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
