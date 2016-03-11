@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="estilo.xsl" type="text/xsl" ?>
+<reunion xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:noNamespaceSchemaLocation="formato.xsd">
+    <informacionGeneral>
+        <lugar>Poli</lugar>
+        <fecha>2016-03-10</fecha>
+        <horaInicio>18:00:00</horaInicio>
+        <horaFinaliza>19:00:00</horaFinaliza>
+        <secretario>Jorge Perez</secretario>
+        <asistentes>
+            <asistente>Manuela Gomez</asistente>
+            <asistente>Andrea Medina</asistente>
+        </asistentes>
+    </informacionGeneral>
+    <agenda>
+        <aspecto>
+            <descripcion>sdsdfsdf</descripcion>
+            <propuesta aprobada="SI">z12</propuesta>
+            <propuesta aprobada="NO">wwwassdas</propuesta>
+        </aspecto>
+        <aspecto>
+            <descripcion>sss</descripcion>
+            <propuesta aprobada="SI">dfff</propuesta>
+        </aspecto>        
+    </agenda>
+    <informes>
+        <anotacion rol="Lider">sss</anotacion> 
+        <anotacion rol="Calidad">333</anotacion> 
+        <anotacion rol="Soporte">dded</anotacion> 
+    </informes>
+</reunion>
