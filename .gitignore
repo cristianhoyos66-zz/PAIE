@@ -1,1 +1,7 @@
 /src/semana3/nbproject/private/
+/ChatUDPServer/nbproject/private/
+/ChatUDPServer/build/
+/ChatThreadTCPServer/nbproject/private/
+/ChatThreadTCPClient/nbproject/private/
+/ChatThreadTCPClient/build/
+/ChatThreadTCPServer/build/
