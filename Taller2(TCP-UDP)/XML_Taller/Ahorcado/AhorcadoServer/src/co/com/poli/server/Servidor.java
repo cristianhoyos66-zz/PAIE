@@ -13,17 +13,16 @@ public class Servidor {
 
     private static final int PUERTO = 12345;
     private static final String palabra = "CASA";
+    private static char[] resultado = new char[palabra.length()];
+    private static int intentos = palabra.length();
+    private static Integer aciertos = 0;
+    private static ServerSocket server;
+    private static Socket conexion;
+    private static DataOutputStream salidaDatos;
+    private static DataInputStream entradaDatos;
 
     public static void main(String[] args) {
         System.out.println("Server");
-        ServerSocket server;
-        Socket conexion;
-        DataOutputStream salidaDatos;
-        DataInputStream entradaDatos;
-        char[] resultado = new char[palabra.length()];
-        int intentos = palabra.length();
-        String res = "";
-
         try {
             server = new ServerSocket(PUERTO);
 
@@ -31,26 +30,15 @@ public class Servidor {
                 conexion = server.accept();
                 entradaDatos = new DataInputStream(conexion.getInputStream());
                 salidaDatos = new DataOutputStream(conexion.getOutputStream());
-                if (intentos > 0) {
-                    
-                    String datosCliente = entradaDatos.readUTF();
+                String datosCliente = entradaDatos.readUTF();
+                if (datosCliente.length() == 1) {
                     char letra = Character.toUpperCase(datosCliente.charAt(0));
-                    System.out.println(datosCliente);
-
-                    for (int i = 0; i < palabra.length(); i++) {
-                        if (palabra.charAt(i) == letra) {
-                            resultado[i] = letra;
-                        } else if (resultado[i] == "_".charAt(0) || resultado[i] == 0x0) {
-                            resultado[i] = "_".charAt(0);
-                        }
-                    }
-                    salidaDatos.writeUTF(Arrays.toString(resultado));
-                    intentos--;
+                    System.out.println("Letra del cliente: " + datosCliente);
+                    gameBase(letra);
+                    msgs();
                 } else {
-                    resultado = new char[palabra.length()];
-                    intentos = palabra.length();
-                    salidaDatos.writeUTF("Tus intentos se han acabado perdiste");
-                    System.out.println("Tus intentos se han acabado perdiste");
+                    salidaDatos.writeUTF("Debes ingresar una letra"
+                            + "\nTus intentos no se verán afectados. \nIntentos: " + intentos);
                 }
                 conexion.close();
             }
@@ -58,4 +46,46 @@ public class Servidor {
             Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    private static void restartGame() {
+        resultado = new char[palabra.length()];
+        intentos = palabra.length();
+        aciertos = 0;
+    }
+
+    private static void gameBase(char letra) {
+        for (int i = 0; i < palabra.length(); i++) {
+            if (palabra.charAt(i) == letra) {
+                resultado[i] = letra;
+                aciertos++;
+            } else if (resultado[i] == "_".charAt(0) || resultado[i] == 0x0) {
+                resultado[i] = "_".charAt(0);
+            }
+        }
+        intentos--;
+    }
+
+    private static void msgs() {
+        try {
+            if (intentos != 0 && aciertos != palabra.length()) {
+                salidaDatos.writeUTF("Te quedan " + intentos + " intentos\n"
+                        + "Resultado: " + Arrays.toString(resultado));
+            } else if (intentos != 0 && aciertos == palabra.length()) {
+                salidaDatos.writeUTF("Has ganado \nResultado: " + Arrays.toString(resultado)
+                        + "\nSi insertas otra letra, volverás a empezar");
+                restartGame();
+            } else if (intentos == 0 && aciertos == palabra.length()) {
+                salidaDatos.writeUTF("Has ganado \nResultado: " + Arrays.toString(resultado)
+                        + "\nSi insertas otra letra, volverás a empezar");
+            } else {
+                salidaDatos.writeUTF("Te quedan " + intentos + " intentos\n"
+                        + "Resultado: " + Arrays.toString(resultado)
+                        + "\nHas perdido, si insertas otra letra, volverás a empezar");
+                restartGame();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

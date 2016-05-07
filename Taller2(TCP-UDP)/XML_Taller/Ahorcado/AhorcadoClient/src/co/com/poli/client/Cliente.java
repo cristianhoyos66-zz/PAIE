@@ -26,14 +26,8 @@ public class Cliente {
             while (true) {
                 conexion = new Socket(IP, PUERTO);
                 String datoaEnviar = teclado.nextLine();
-                if (datoaEnviar.isEmpty()) {
-                    System.out.println("Por favor ingresa una letra");
-                } else if (datoaEnviar.length() > 1) {
-                    System.out.println("Debes ingresar únicamente una letra");
-                } else {
-                    salidaDatos = new DataOutputStream(conexion.getOutputStream());
-                    salidaDatos.writeUTF(datoaEnviar); 
-                }
+                salidaDatos = new DataOutputStream(conexion.getOutputStream());
+                salidaDatos.writeUTF(datoaEnviar);
                 entradaDatos = new DataInputStream(conexion.getInputStream());
                 System.out.println(entradaDatos.readUTF());
                 conexion.close();
