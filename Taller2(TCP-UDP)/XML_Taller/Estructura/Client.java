@@ -1,0 +1,40 @@
+//CLIENTE
+
+package co.com.poli.client;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Cliente {
+    
+    private static final int PUERTO = 12345;
+    private static final String IP = "localhost";
+    
+    public static void main(String[] args) {
+        System.out.println("Cliente");
+        
+        Socket conexion;
+        
+        DataInputStream entradaDatos;
+        DataOutputStream salidaDatos;
+        Scanner teclado = new Scanner(System.in);
+        try {
+            
+            while (true) {
+                conexion = new Socket(IP, PUERTO);
+                String datoaEnviar = teclado.nextLine();
+                salidaDatos = new DataOutputStream(conexion.getOutputStream());
+                salidaDatos.writeUTF(datoaEnviar);
+                conexion.close();
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
