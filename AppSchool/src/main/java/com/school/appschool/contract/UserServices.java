@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author sala305
  */
-@Path("usuario")
+@Path("users")
 public interface UserServices {
 
     @Path("/getUser")
